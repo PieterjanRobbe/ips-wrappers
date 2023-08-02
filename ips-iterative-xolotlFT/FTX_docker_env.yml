@@ -1,0 +1,11 @@
+name: ftx
+dependencies:
+    - pip
+    - pip:
+        - ipsframework
+        - numpy
+        - h5py
+        - matplotlib
+        - .
+variables:
+    FTRIDYN_PATH: /opt/fractal-tridyn
