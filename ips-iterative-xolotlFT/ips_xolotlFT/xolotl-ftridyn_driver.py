@@ -1458,7 +1458,7 @@ class xolotlFtridynDriver(Component):
                     if self.collapsedLoops<=int(self.driver['MAX_COLLAPSE_LOOPS']):
                         #this first call can probably be removed, and just keep while over netFile size
                         self.services.call(xolotl, 'init', timeStamp, dTime=time, time_decimal=self.time_decimal, xParameters=self.xp.parameters, network_size_file=network_size_file, output_file=outFile, print_test=self.print_test)
-                        if os.path.exists(network_size_file):
+                        if os.path.exists(network_size_file) and os.path.exists(self.INPUT_DIR+'/'+self.XOLOTL_NETWORK_FILE):
                             print('found network_size_file')
                             worker_network_sizeFile=open(network_size_file, 'r')
                             worker_netFile_size=int(worker_network_sizeFile.readline())
